@@ -9,6 +9,8 @@ import Title from './Componets/Title/Title'
 import About from './Componets/About/About'
 import Campus from './Componets/Campus/Campus'
 import Testimonials from './Componets/Testimonials/Testimonials'
+import Contact from './Componets/Contact/Contact'
+import Footer from './Componets/Footer/Footer'
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
      <Campus/>
      <Title subTitle="TESTIMONIALS" Title="What Student Says"/>
      <Testimonials/>
+     <Title subTitle="Contact Us" Title="Get In Touch"/>
+     <Contact/>
+     <Footer/>
 
      </div>
     

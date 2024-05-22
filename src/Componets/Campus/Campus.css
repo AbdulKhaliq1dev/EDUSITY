@@ -16,6 +16,15 @@
     width: 23%;
 }
 
+@media(max-width:800px){
+    .gallary{
+        flex-wrap: wrap;
 
+    }
+    .gallary img{
+        width: 48%;
+        margin-bottom: 25px;
+    }
+}
 
 

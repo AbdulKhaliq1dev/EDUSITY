@@ -8,7 +8,7 @@ import White_arrow from '../../assets/white-arrow.png'
 
 const Campus = () => {
   return (
-    <div className='campus'>
+    <div className='campus' id='campus'>
         <div className="gallary">
             <img src={Galary_1} alt="" />
             <img src={Galary_2} alt="" />

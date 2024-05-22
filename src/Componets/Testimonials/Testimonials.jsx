@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../Testimonials/Testimonials.css'
 import Next_icon from '../../assets/next-icon.png'
 import Back_icon from '../../assets/back-icon.png'
@@ -6,18 +6,42 @@ import User_1 from '../../assets/user-1.png'
 import User_2 from '../../assets/user-2.png'
 import User_3 from '../../assets/user-3.png'
 import User_4 from '../../assets/user-4.png'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const Testimonials = () => {
+
+    const slider = useRef();
+    let tx = 0;
+
+
+      const slideForward = () =>{
+          if(tx > -50) {
+            tx -=25
+          }
+          slider.current.style.transform = `translateX(${tx}%)`
+      }
+
+      const slideBackrward = () =>{
+        if(tx < 0) {
+            tx +=25
+          }
+          slider.current.style.transform = `translateX(${tx}%)`
+
+      }
+
+
+
   return (
-    <div className='testimonials'>
-        <img src={Next_icon} alt="" className='next-btn'/>
-        <img src={Back_icon} alt="" className='back-btn'/>
+    <div className='testimonials' id='testimonials'>
+        <img src={Next_icon} alt="" className='next-btn' onClick={slideForward} />
+        <img src={Back_icon} alt="" className='back-btn' onClick={slideBackrward} />
 
         <div className="slider">
-            <ul>
+            <ul ref={slider}>
                 <li>
                     <div className="slide">
-                        <div className="userinfo">
+                        <div className="user-info">
                             <img src={User_1}alt="" />
                             <div>
                                 <h3>William Jackson</h3>
@@ -35,7 +59,7 @@ const Testimonials = () => {
                 </li>
                 <li>
                     <div className="slide">
-                        <div className="userinfo">
+                        <div className="user-info">
                             <img src={User_2}alt="" />
                             <div>
                                 <h3>William Jackson</h3>
@@ -53,7 +77,7 @@ const Testimonials = () => {
                 </li>
                 <li>
                     <div className="slide">
-                        <div className="userinfo">
+                        <div className="user-info">
                             <img src={User_3}alt="" />
                             <div>
                                 <h3>William Jackson</h3>
@@ -71,7 +95,7 @@ const Testimonials = () => {
                 </li>
                 <li>
                     <div className="slide">
-                        <div className="userinfo">
+                        <div className="user-info">
                             <img src={User_4}alt="" />
                             <div>
                                 <h3>William Jackson</h3>
@@ -90,6 +114,8 @@ const Testimonials = () => {
             </ul>
 
         </div>
+
+       
 
     </div>
   )
